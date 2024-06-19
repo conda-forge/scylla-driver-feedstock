@@ -1,13 +1,13 @@
 {% set name = "scylla-driver" %}
-{% set version = "3.26.8" %}
+{% set version = "3.26.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/scylla-driver-{{ version }}.tar.gz
-  sha256: 20a4d18a69e710bf0ce41db77249097761806356f58a2a6792fe55418a753ad5
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 8378d41bf2ce96afb7676c6389d3d4b33835bd923a5c50a595f3ba4d4b89d9af
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,6 +19,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - cython >=0.20,!=0.25,<0.30
