@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 8378d41bf2ce96afb7676c6389d3d4b33835bd923a5c50a595f3ba4d4b89d9af
 
 build:
@@ -24,6 +24,7 @@ requirements:
     - python
     - cython >=0.20,!=0.25,<0.30
     - pip
+    - setuptools
   run:
     - python
     - six >=1.9
