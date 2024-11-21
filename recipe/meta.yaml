@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: c4a31433482aaf50d17a6b5f51f1e2a997eaad7be58bca9d6de1e46edc4f2543
 
 build:
@@ -24,9 +24,9 @@ requirements:
     - python
     - cython >=0.20,!=0.25,<0.30
     - pip
+    - setuptools
   run:
     - python
-    - six >=1.9
     - geomet >=0.1,<0.3
     - pyyaml >5.0
 
