@@ -1,5 +1,5 @@
 {% set name = "scylla-driver" %}
-{% set version = "3.29.6" %}
+{% set version = "3.29.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: dfe9fbea3501732174e9104078f03de8bcb1f32231f0854e5683cec2a4b4bc42
+  sha256: ba658d386efbe543668667a912d39b7c708ac8977655c9114c9f98f3e0970d1b
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
