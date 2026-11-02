@@ -1,5 +1,5 @@
 {% set name = "scylla-driver" %}
-{% set version = "3.29.12" %}
+{% set version = "3.29.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 56dbae56ec5d079227b1b713e076b57df0fe515a848abd3ab9c152acc48f9b9d
+  sha256: 3da9f273175dce23bbb17452471398491984abf4d6a04e836ea50ae4f804e3ed
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   script_env:
     - CASS_DRIVER_BUILD_EXTENSIONS_ARE_MUST=yes # [not win]
 
