@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   script_env:
     - CASS_DRIVER_BUILD_EXTENSIONS_ARE_MUST=yes  # [not win]
 
